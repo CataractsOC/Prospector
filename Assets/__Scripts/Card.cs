@@ -77,7 +77,11 @@ public class Card : MonoBehaviour {
 		set {
 			back.SetActive(!value);
 		}
-	}	
+	}
+    
+    virtual public void OnMouseUpAsButton() {
+        print(name);
+    }
 } // class Card
 
 [System.Serializable]
