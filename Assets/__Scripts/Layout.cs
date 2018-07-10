@@ -19,20 +19,23 @@ public class Layout : MonoBehaviour {
     public PT_XMLReader xmlr;
     public PT_XMLHashtable xml;
     public Vector2 multiplier;
+
     public List<SlotDef> slotDefs;
     public SlotDef drawPile;
     public SlotDef discardPile;
 
     public string[] sortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Discard", "Draw" };
+
     public void ReadLayout(string xmlText) {
         xmlr = new PT_XMLReader();
         xmlr.Parse(xmlText);
         xml = xmlr.xml["xml"][0];
+
         multiplier.x = float.Parse(xml["multiplier"][0].att("x"));
         multiplier.y = float.Parse(xml["multiplier"][0].att("y"));
 
         SlotDef tSD;
-
+        
         PT_XMLHashList slotsX = xml["slot"];
         for (int i = 0; i < slotsX.Count; i++) {
             tSD = new SlotDef();
