@@ -20,3 +20,4 @@ public class CardProspector : Card {
         Prospector.S.CardClicked(this);
         base.OnMouseUpAsButton();
     }
+}
